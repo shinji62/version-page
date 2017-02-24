@@ -1,0 +1,23 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: golang
+    tag: '1.8'
+
+
+
+inputs:
+  - name: version-page
+    path: gopath/src/github.com/shinji62/version-page/
+  #- name: version
+
+outputs:
+  - name: version-page-build
+
+run:
+  path: gopath/src/github.com/shinji62/version-page/ci/build/build
+params:
+  VERSION_APP:

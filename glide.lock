@@ -1,0 +1,158 @@
+hash: 88373b1de64e2b953faf507ec6f8ebdf0f3c251c1fc44ac432cc969733ecf46a
+updated: 2017-02-24T13:28:34.559229175+09:00
+imports:
+- name: github.com/alecthomas/template
+  version: a0175ee3bccc567396460bf5acd36800cb10c49c
+  subpackages:
+  - parse
+- name: github.com/alecthomas/units
+  version: 2efee857e7cfd4f3d0138cc3cbb1b4966962b93a
+- name: github.com/aymerick/raymond
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - ast
+  - parser
+  - lexer
+- name: github.com/blang/semver
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/cloudfoundry-community/go-cfclient
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/eknkc/amber
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - parser
+- name: github.com/flosch/pongo2
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/geekypanda/httpcache
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - internal/fhttp
+  - internal/nethttp
+  - internal/server
+  - internal
+  - internal/fhttp/rule
+  - internal/nethttp/rule
+- name: github.com/golang/protobuf
+  version: 69b215d01a5606c843240eab4937eab3acee6530
+  subpackages:
+  - proto
+- name: github.com/google/go-github
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - github
+- name: github.com/google/go-querystring
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - query
+- name: github.com/hashicorp/go-version
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/imdario/mergo
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/iris-contrib/formBinder
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/Joker/jade
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/juju/errors
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/kataras/go-errors
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/kataras/go-fs
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/kataras/go-serializer
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - json
+  - jsonp
+  - markdown
+  - xml
+- name: github.com/kataras/go-template
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - amber
+  - django
+  - handlebars
+  - html
+- name: github.com/klauspost/compress
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - gzip
+  - flate
+  - zlib
+- name: github.com/klauspost/cpuid
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/klauspost/crc32
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/mattn/go-runewidth
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/microcosm-cc/bluemonday
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/pivotal-cf/go-pivnet
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - logshim
+  - download
+  - logger
+- name: github.com/pivotal-cf/pivnet-resource
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - gp
+- name: github.com/russross/blackfriday
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/shinji62/generate-opsman-status
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - pivnet
+  - opsmanager
+- name: github.com/shurcooL/sanitized_anchor_name
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/valyala/bytebufferpool
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: github.com/valyala/fasthttp
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - fasthttputil
+  - stackless
+- name: golang.org/x/crypto
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - acme/autocert
+  - acme
+- name: golang.org/x/net
+  version: 7dbad50ab5b31073856416cdcfeb2796d682f844
+  subpackages:
+  - context/ctxhttp
+  - context
+  - html
+  - html/atom
+- name: golang.org/x/oauth2
+  version: 2baa8a1b9338cf13d9eeb27696d761155fa480be
+  subpackages:
+  - clientcredentials
+  - internal
+- name: golang.org/x/sync
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - errgroup
+- name: google.golang.org/appengine
+  version: 3a452f9e00122ead39586d68ffdb9c6e1326af3c
+  subpackages:
+  - urlfetch
+  - internal
+  - internal/urlfetch
+  - internal/base
+  - internal/datastore
+  - internal/log
+  - internal/remote_api
+- name: gopkg.in/alecthomas/kingpin.v2
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: gopkg.in/cheggaaa/pb.v1
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+- name: gopkg.in/kataras/iris.v6
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+  subpackages:
+  - adaptors/httprouter
+  - adaptors/view
+  - middleware/logger
+- name: gopkg.in/yaml.v2
+  version: b2841556deaef0f0c3246982d36a0aca369f2b7c
+devImports: []

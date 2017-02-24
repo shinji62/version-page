@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eux
+
+my_dir="$( cd "$( dirname "${0}" )" && pwd )"
+
+"${my_dir}/test" \
+  "$@" \
+  .

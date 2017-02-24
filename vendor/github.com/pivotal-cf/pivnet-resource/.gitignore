@@ -1,0 +1,8 @@
+/cmd/check/check
+/cmd/in/in
+/cmd/out/out
+
+s3-out
+/cmd/out/s3-out
+
+main

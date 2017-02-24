@@ -1,0 +1,13 @@
+---
+applications:
+- name: version-page
+  memory: 64M
+  host: versions
+  command: ./version-page
+  env:
+    CF_CLIENT_ID: !Please-change-me
+    CF_CLIENT_SECRET: !Please-change-me
+    DEBUG: false
+    SKIP_SSL_VALIDATION: true
+    CF_PULL_TIME: 60s
+    API_ENDPOINT: https://api.[your system domain]

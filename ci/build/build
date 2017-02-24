@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e -u -x
+export ROOT_DIR=$PWD
+export GOPATH=$PWD/gopath
+export PATH=$GOPATH/bin:$PATH
+export BUILD_NUMBER=`[ ${VERSION_APP} ] && cat ${VERSION_APP} || echo "0.0.0"`
+cd $GOPATH/src/github.com/shinji62/version-page
+
+
+make all
+
+mv ./dist/linux/amd64/version-page_linux_amd64 ${ROOT_DIR}/version-page-build/
+mv ./templates  ${ROOT_DIR}/version-page-build/

@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e -u -x
+export ROOT_DIR=$PWD
+export GOPATH=$PWD/gopath
+export PATH=$GOPATH/bin:$PATH
+export RESULT_FILE="${ROOT_DIR}/opsman-result/result.json"
+cd $GOPATH/src/github.com/shinji62/generate-opsman-status/
+
+
+go run main.go

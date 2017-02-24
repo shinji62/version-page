@@ -1,0 +1,36 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: getourneau/alpine-golang-bash
+
+
+inputs:
+  - name: version-page
+  - name: version-page-build
+  - name: opsman-result
+
+outputs:
+  - name: merge-result
+
+run:
+  path: /bin/bash
+  args:
+  - -exc
+  - |
+    cp version-page/manifest.yml merge-result/
+    cp version-page-build/version-page_linux_amd64 merge-result/version-page
+    cp -R version-page-build/templates merge-result/
+    mkdir merge-result/opsman
+    cp opsman-result/result.json merge-result/opsman/result.json
+    chmod +x merge-result/version-page
+    ls -lah merge-result/
+
+
+
+
+
+params:
+  VERSION_APP:

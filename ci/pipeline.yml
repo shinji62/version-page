@@ -1,0 +1,59 @@
+---
+resources:
+- name: version-page
+  type: git
+  source:
+    uri: git@github.com:shinji62/version-page.git
+    branch: master
+    private_key: {{private-key-github-concourse}}
+
+- name: generate-opsman-status
+  type: git
+  source:
+    uri: git@github.com:shinji62/generate-opsman-status.git
+    branch: master
+    private_key: {{private-key-github-concourse}}
+
+- name: version-page-cf
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-username}}
+    password: {{cf-password}}
+    organization: {{cf-org}}
+    space: {{cf-space-dev}}
+    skip_cert_check: true
+
+
+
+jobs:
+- name: generate-opsman-build-v-pages
+  public: true
+  serial: true
+  plan:
+  - aggregate:
+    - get: version-page
+    - get: generate-opsman-status
+  - task: generate-opsman-data
+    file: generate-opsman-status/ci/run/run.yml
+    params:
+      OPSMAN_ENDPOINT: {{opsmanager-endpoint}}
+      OPSMAN_CLIENT_ID: {{opsmanager-client-id}}
+      OPSMAN_CLIENT_SECRET: {{opsmanager-client-secret}}
+      PIVNET_TOKEN: {{pivnet-api-token}}
+      SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
+  - task: build-version-page
+    file: version-page/ci/build/build.yml
+  - task: merge-result-binary
+    file: version-page/ci/merge-result/merge-result.yml
+  - put: version-page-cf
+    params:
+      manifest: merge-result/manifest.yml
+      path: merge-result/
+      environment_variables:
+        CF_CLIENT_ID: {{cf-client-id}}
+        CF_CLIENT_SECRET: {{cf-client-secret}}
+        DEBUG: {{debug}}
+        SKIP_SSL_VALIDATION: {{skip-ssl-validation}}
+        CF_PULL_TIME: 60s
+        API_ENDPOINT: {{cf-api-w-scheme}}

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -eux
+
+SLOW_SPEC_THRESHOLD=40
+
+my_dir="$( cd "$( dirname "${0}" )" && pwd )"
+base_dir="$( cd "${my_dir}/.." && pwd )"
+
+pushd "${base_dir}" > /dev/null
+  CGO_ENABLED=1 ginkgo \
+    -race \
+    -p \
+    -randomizeAllSpecs \
+    -randomizeSuites \
+    -slowSpecThreshold="${SLOW_SPEC_THRESHOLD}" \
+    "$@"
+popd > /dev/null

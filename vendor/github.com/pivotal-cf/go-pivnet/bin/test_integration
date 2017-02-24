@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eu
+
+set +x
+: "${API_TOKEN}"
+set -x
+
+: "${HOST}"
+
+my_dir="$( cd "$( dirname "${0}" )" && pwd )"
+
+"${my_dir}/test" \
+  "$@" \
+  -r \
+  integration

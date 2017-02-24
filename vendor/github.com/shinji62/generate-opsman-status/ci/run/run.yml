@@ -1,0 +1,24 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: getourneau/alpine-golang-bash
+
+
+inputs:
+  - name: generate-opsman-status
+    path: gopath/src/github.com/shinji62/generate-opsman-status/
+
+outputs:
+  - name: opsman-result
+
+run:
+  path: gopath/src/github.com/shinji62/generate-opsman-status/ci/run/run
+params:
+  OPSMAN_ENDPOINT:
+  OPSMAN_CLIENT_ID:
+  OPSMAN_CLIENT_SECRET:
+  PIVNET_TOKEN:
+  SKIP_SSL_VALIDATION:

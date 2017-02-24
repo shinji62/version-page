@@ -1,0 +1,18 @@
+package: github.com/shinji62/version-page
+import:
+- package: github.com/cloudfoundry-community/go-cfclient
+- package: github.com/shinji62/generate-opsman-status
+  subpackages:
+  - pivnet
+- package: gopkg.in/alecthomas/kingpin.v2
+- package: gopkg.in/kataras/iris.v6
+  subpackages:
+  - adaptors/httprouter
+  - adaptors/view
+  - middleware/logger
+- package: golang.org/x/oauth2
+  subpackages:
+  - clientcredentials
+- package: golang.org/x/net
+  subpackages:
+  - context/ctxhttp
