@@ -34,6 +34,21 @@ jobs:
   - aggregate:
     - get: version-page
     - get: generate-opsman-status
+  - task: create-uaa-cf-client
+    file: version-page/ci/create-uaa-client/create-uaa-client.yml
+    params:
+      UAA_ENDPOINT: {{uaa-endpoint}}
+      UAA_ADMIN_SECRET: {{uaa-admin-crend-secret}}
+      CF_CLIENT_ID: {{cf-client-id}}
+      CF_CLIENT_SECRET: {{cf-client-secret}}
+  - task: create-uaa-opsman-client
+    file: generate-opsman-status/ci/create-uaa-client/create-uaa-client.yml
+    params:
+      OPSMAN_ENDPOINT: {{opsmanager-endpoint}}
+      OPSMAN_CLIENT_ID: {{opsmanager-client-id}}
+      OPSMAN_CLIENT_SECRET: {{opsmanager-client-secret}}
+      OPSMAN_ADMIN_PASSWORD: {{opsmanager-admin-password}}
+      OPSMAN_ADMIN_USER: {{opsmanager-admin-user}}
   - task: generate-opsman-data
     file: generate-opsman-status/ci/run/run.yml
     params:
