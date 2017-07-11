@@ -7,7 +7,7 @@ import (
 )
 
 const buildPackReleaseBaseUrl = "https://github.com/cloudfoundry/"
-const buildpackRegexp = "(.*)-(cached|offline)-(v[0-9-.]+).zip"
+const buildpackRegexp = "(.*)-(cached|offline)-(v[0-9-.]+)(\\+?[0-9]+)?.zip"
 
 type BuildpackInfo struct {
 	Name            string `json:"name"`
